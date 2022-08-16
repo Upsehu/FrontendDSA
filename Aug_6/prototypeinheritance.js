@@ -7,7 +7,7 @@ Product.prototype.display = function () {
 }
 
 function phone(m) {
-    Product.call(this, 'Apple')
+    Product.call(tis, "Phone")
     this.model = m;
 }
 

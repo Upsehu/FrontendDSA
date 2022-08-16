@@ -97,13 +97,17 @@ class LinkedList {
 			return;
 		}
 		let prev = this.head;
-		for(let i = 0; i < pos - 1; i++) {
+		for(let i = 0; i < pos - 1 && prev != null; i++) {
 			prev = prev.next;
+		}
+		if(prev.next == null) {
+			// it's a tail removal
+			this.removeAtAtail();
+			return;
 		}
 		let nodeToBeDeleted = prev.next;
 		prev.next = nodeToBeDeleted.next;
-		nodeTobeDeleted.next = null;
-	
+		nodeToBeDeleted.next = null;
 	}
 
 	display() {
