@@ -7,10 +7,12 @@ Product.prototype.display = function () {
 }
 
 function phone(m) {
+    Product.call(this, 'Apple')
     this.model = m;
 }
 
 phone.prototype = Object.create(Product.prototype);
 
 let p = new phone("sjnf");
-console.log(p);
+console.log(p.name)
+p.display()
